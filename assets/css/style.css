@@ -1,0 +1,118 @@
+@import url('https://fonts.cdnfonts.com/css/inter');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 4px solid red; */
+    width: 100vw;
+}
+
+.container {
+    width: 80%;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 3px solid rgb(64, 0, 255); */
+    width: 100vw;
+}
+
+/* Side Panel */
+.sidePanel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 26%;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px dashed black; */
+    width: 100%;
+    height: 50%;
+}
+
+.list .listOptions {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* border: 1px dotted rgb(255, 8, 8); */
+}
+
+.listOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26px;
+    /* border: 1px solid red; */
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+.listOption:hover{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.268);
+    background-color: rgba(0, 0, 0, 0.052);
+}
+
+.listOptionIcon {
+    width: 0%;
+    /* border: 1px solid red; */
+}
+
+.listOptionText {
+    /* border: 1px solid black; */
+}
+
+.listOptionNumber {
+    color: rgba(2, 2, 2, 0.63);
+}
+
+.quoteArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    /* border: 1px dashed black; */
+    width: 100%;
+    height: 7%;
+}
+
+.modeOptions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    /* border: 1px dashed black; */
+    width: 100%;
+    height: 5%;
+}
+
+/* Task: */
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100vh;
+    /* border: 1px solid green; */
+}
