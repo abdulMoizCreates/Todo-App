@@ -5,6 +5,10 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+:root{
+    --defaultBorderRadius: 12px
+}
+
 
 body {
     display: flex;
@@ -34,7 +38,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    border-right: 2px dashed rgba(0, 0, 0, 0.273);
+    /* border-right: 2px dashed rgba(0, 0, 0, 0.273); */
     width: 25%;
     height: 100vh;
     padding: 2rem;
@@ -67,7 +71,7 @@ body {
     /* border: 1px solid red; */
     margin: 0.5rem 0;
     padding: 0.5rem;
-    border-radius: 6px;
+    border-radius: var(--defaultBorderRadius);
     cursor: pointer;
     transition: all 0.1s ease;
 }
@@ -108,7 +112,7 @@ body {
     height: 5%;
 }
 
-/* Task: */
+/*               TODOs:                */
 .todos {
     display: flex;
     align-items: center;
@@ -116,32 +120,109 @@ body {
     flex-direction: column;
     width: 75%;
     height: 100vh;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
+/* Section 2: MainHeading */
+.mainHeading{
+    /* border: 1px solid red; */
+    width: 100%;
+    padding: 1rem 3rem;
+}
+.mainHeading h1{
+    font-size: 60px;
+}
+/* Section 1: addTodoSection */
 .addTodoSection{
+    padding: 0 3rem ;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid black;
+    justify-content: space-between;
+    /* border: 1px solid black; */
     width: 100%;
-    height: 30%;
+    height: 8%;
 }
+
+.searchBar{
+    /* border: 1px solid red; */
+    width: 86%;
+    font-size: 18px;
+}
+
+/* Section 2: todoFilters */
 .todoFilters{
+    padding: 0 3rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px dashed red;
+    justify-content: space-between;
+    /* border: 1px dashed red; */
     width: 100%;
-    height: 20%;
+    height: 10%;
 }
+.filterBtns{
+    /* border: 1px solid red; */
+}
+.filterBtns .filterBtn{
+    border-radius: 100px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    font-size: 100%;
+    height: 50px;
+}
+.filterBtn:hover{
+    transform: none;
+    color: white;
+    background-color: black;
+}
+.filterBtns .all{
+    color: white;
+    background-color: black;
+}
+
+/* Section 3: todoList */
 .todoList{
+    padding: 0 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 50%;
+    height: 70%;
     border: 1px dashed blue;
 }
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border: 1px solid green;
+    width: 100%;
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: var(--defaultBorderRadius);
+}
+ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    border: 2px solid rgba(0, 0, 0, 0.122);
+    width: 100%;
+    border-radius: var(--defaultBorderRadius);
+    height: 10vh;
+}
+ul li .todoCheck{
+    /* border: 1px solid red; */
+}
+ul li p{
+    /* border: 1px solid red; */
+    width: 80%;
+    font-size: 20px;
+}
+ul li button{
+
+}
+
 
 /* Default stylings: */
 button{
@@ -149,9 +230,10 @@ button{
     padding: 1rem;
     background-color: black;
     border: none;
-    border-radius: 12px;
+    border-radius: var(--defaultBorderRadius);
     font-size: 18px;
     transition: all 0.1s ease;
+    cursor: pointer;
 }
 button:hover{
     background-color: rgba(0, 0, 0, 0.888);
@@ -159,7 +241,7 @@ button:hover{
 }
 input{
     padding: 1rem;
-    width: 70%;
     border: none;
-    background-color: rgba(0, 0, 0, 0.089);
+    background-color: rgba(0, 0, 0, 0.045);
+    border-radius: var(--defaultBorderRadius);
 }

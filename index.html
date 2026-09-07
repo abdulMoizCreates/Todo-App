@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
     <title>Todo App</title>
 </head>
 
@@ -47,18 +48,59 @@
         </div>
 
         <div class="todos">
+            <div class="mainHeading">
+                <h1>Todo App</h1>
+            </div>
             <div class="addTodoSection">
+
                 <!-- Search and adding todos: -->
-                <input type="text"> 
-                <button class="searchBtn">search</button>
-                <button class="addBtn">Add +</button>
+                <input type="text" class="searchBar" placeholder="Add/Search Todos">
+                <button class="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="addBtn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+
             </div>
             <div class="todoFilters">
-                <button class="filterBtn all">All</button>
-                <button class="filterBtn Pending">Pending</button>
-                <button class="filterBtn completed">Conmpleted</button>
+                <div class="filterBtns">
+                    <button class="filterBtn all buttonIsActive">All</button>
+                    <button class="filterBtn Pending">Pending</button>
+                    <button class="filterBtn completed">Conmpleted</button>
+                </div>
+                <div class="filterSortList">
+                    <span class="listOptionNumber">Sort by:</span>
+                    <select name="" id="">
+                        <option value="">name</option>
+                        <option value="">Date Created</option>
+                        
+                    </select>
+                </div>
             </div>
             <div class="todoList">
+                <ul>
+                    <li>
+                        <input type="checkbox" class="todoCheck">
+                        <p class="todoTask">read Books to develope Mindset</p>
+                        <button class="todoListBtn">
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                        <button class="todoListBtn">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="todoCheck">
+                        <p class="todoTask">read Books to develope Mindset</p>
+                        <button class="todoListBtn">
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                        <button class="todoListBtn">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </li>
+                </ul>
                 <!-- JavaScript Rendering will be done here -->
             </div>
         </div>
