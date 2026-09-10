@@ -198,7 +198,7 @@ ul{
     /* border: 1px solid green; */
     width: 100%;
     height: 90%;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     border-radius: var(--defaultBorderRadius);
 }
@@ -206,11 +206,12 @@ ul li{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-shrink: 0;
     padding: 0 3rem;
     border: 2px solid rgba(0, 0, 0, 0.122);
     width: 100%;
     border-radius: var(--defaultBorderRadius);
-    height: 8vh;
+    height: 70px;
 }
 ul li .todoCheck{
     /* border: 1px solid red; */
@@ -264,4 +265,10 @@ input{
     border-radius: 50%;
     cursor: pointer;
 }
+.todoCheck:checked + p{
+    text-decoration: line-through;
+    color: rgba(4, 4, 4, 0.461);
+}
+/* Conditional Classes: */
+
 

@@ -1,53 +1,65 @@
 // Todos Data:
 const todoDB = [];
-// Search Bar:
-const searchBar = document.querySelector(".searchBar")
 
-// Buttons:
-const addBtn = document.querySelector(".addBtn")
-const editBtn = document.querySelector(".fa-solid fa-pencil")
+// Accessing DOM Nodes:
+const searchBar = document.querySelector(".searchBar");
+const addBtn = document.querySelector(".addBtn");
+const listArea = document.querySelector(".listArea");
 
-// List:
-const listArea = document.querySelector(".listArea")
 
-addBtn.addEventListener("click", () => {
-    listArea.textContent = ""
-    // data storing here
-    todoDB.push({ id: crypto.randomUUID(), title: searchBar.value, isCompleted: false })
+// Rendering todos function:
+async function renderTodos(){
+    if (searchBar.value !== "") {
+        listArea.textContent = ""
+        // data storing here
+        todoDB.push({ id: crypto.randomUUID(), title: searchBar.value, isCompleted: false })
 
-    // searchbar being empty
-    searchBar.value = "";
+        // searchbar being empty
+        searchBar.value = "";
 
-    // data is mapping on UI
-    let data = todoDB.map((todos) => {
-        // return todos.title
-        const li = document.createElement('li')
+        // data is mapping on UI
+        todoDB.map((todos) => {
+            // return todos.title
+            const li = document.createElement('li')
 
-        const input = document.createElement('input')
-        input.type = "checkbox";
-        input.className = "todoCheck"
-        li.appendChild(input);
+            const input = document.createElement('input')
+            input.type = "checkbox";
+            input.className = "todoCheck"
+            li.appendChild(input);
 
-        const p = document.createElement('p')
-        p.setAttribute("class", "todoTask");
-        p.textContent = todos.title;
-        li.appendChild(p)
+            const p = document.createElement('p')
+            p.setAttribute("class", "todoTask");
+            p.textContent = todos.title;
+            li.appendChild(p)
 
-        const editButton = document.createElement("button");
-        editButton.className = "todoListBtn";
-        const editIcon = document.createElement("i")
-        editIcon.className = "fa-solid fa-pencil";
-        editButton.appendChild(editIcon);
-        li.appendChild(editButton);
+            const editButton = document.createElement("button");
+            editButton.className = "todoListBtn";
+            const editIcon = document.createElement("i")
+            editIcon.className = "fa-solid fa-pencil";
+            editButton.appendChild(editIcon);
+            li.appendChild(editButton);
 
-        const deleteButton = document.createElement("button");
-        deleteButton.className = "todoListBtn";
-        const deleteIcon = document.createElement("i")
-        deleteIcon.className = "fa-solid fa-x";
-        deleteButton.appendChild(deleteIcon);
-        li.appendChild(deleteButton);
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "todoListBtn";
+            const deleteIcon = document.createElement("i")
+            deleteIcon.className = "fa-solid fa-x";
+            deleteButton.appendChild(deleteIcon);
+            li.appendChild(deleteButton);
 
-        listArea.appendChild(li)
-    })
-})
+            listArea.appendChild(li)
+        })
+    }else{
+        alert("Empty value cannot be a TODO")
+    }
+}
+// running renderTodos() when click and enter event is trriged:
+addBtn.addEventListener("click", renderTodos);
+searchBar.addEventListener("keydown", (e) => {
+    if(e.key === "Enter"){
+        renderTodos();
+    }
+});
+// --------------------------
+
+
 
